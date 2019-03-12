@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyecto_carro;
 
 import carrito.Carrito;
@@ -97,14 +92,26 @@ public class App {
                     }
                     break;
                 case "6":
-                    carro.escribirProductos();
-                    System.exit(6);
+                    int op3 = JOptionPane.showConfirmDialog(null, "¿Desea confirmar el pedido?");
+                    switch (op3) {
+                        case 0:
+                            carro.escribirProductos();
+                            System.exit(6);
+                            break;
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        default:
+                            JOptionPane.showMessageDialog(null, "Error.");
+                    }
+
                     break;
 
                 default:
                     JOptionPane.showMessageDialog(null, "Error.");
             }
-        } while (opcion != "6");
+        } while (opcion != "10");
 
     }
 
