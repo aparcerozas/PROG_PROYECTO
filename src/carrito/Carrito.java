@@ -31,14 +31,14 @@ public class Carrito  implements MetodosComunes{
     //Mètodo que nos muestra los productos del ArrayList carrito formateados.
     @Override
     public void mostrar() {
-        System.out.println("\nCarrito:");
+        System.out.println("\n************Carrito:************\n");
         System.out.printf("%15s %30s %20s %20s", "Producto", "Precio Unidad", "Tipo", "NºUnidades\n");
         Object Datos[] = new Object[4];
         for (int i = 0; i < carrito.size(); i++) {
-            System.out.printf("%15s", Datos[0] = carrito.get(i).getNome());
-            System.out.printf("%30s", Datos[1] = carrito.get(i).getPrecio() + "€");
-            System.out.printf("%20s", Datos[2] = carrito.get(i).getTipo());
-            System.out.printf("%20s", Datos[3] = carrito.get(i).getNumUnid());
+            System.out.printf("%20s", Datos[0] = "\033[31m"+carrito.get(i).getNome());
+            System.out.printf("%35s", Datos[1] ="\033[32m"+ carrito.get(i).getPrecio() + "€");
+            System.out.printf("%25s", Datos[2] ="\033[34m"+ carrito.get(i).getTipo());
+            System.out.printf("%25s", Datos[3] = "\033[36m"+carrito.get(i).getNumUnid());
             System.out.println("");
         }
         System.out.println("\nPrecio Total: " + calcularPrecio());

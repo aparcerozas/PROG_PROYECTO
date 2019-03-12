@@ -40,14 +40,14 @@ public class Tienda  implements MetodosComunes {
     @Override
     public void mostrar() {
 
-        System.out.println("\nCatalogo:");
+        System.out.println("\n************Catalogo:**********\n");
         System.out.printf("%15s %30s %20s %20s", "Producto", "Precio Unidad", "Tipo", "NºUnidades\n");
         Object Datos[] = new Object[4];
         for (int i = 0; i < Tienda.catalogo.size(); i++) {
-            System.out.printf("%15s", Datos[0] = Tienda.catalogo.get(i).getNome());
-            System.out.printf("%30s", Datos[1] = Tienda.catalogo.get(i).getPrecio() + "€");
-            System.out.printf("%20s", Datos[2] = Tienda.catalogo.get(i).getTipo());
-            System.out.printf("%20s", Datos[3] = Tienda.catalogo.get(i).getNumUnid());
+            System.out.printf("%20s", Datos[0] ="\033[31m"+ Tienda.catalogo.get(i).getNome());
+            System.out.printf("%35s", Datos[1] ="\033[32m"+Tienda.catalogo.get(i).getPrecio() + "€");
+            System.out.printf("%25s", Datos[2] = "\033[34m"+Tienda.catalogo.get(i).getTipo());
+            System.out.printf("%25s", Datos[3] = "\033[36m"+Tienda.catalogo.get(i).getNumUnid()+"\u001B[0m");
             System.out.println("");
         }
 
