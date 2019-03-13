@@ -21,9 +21,9 @@ public class App {
             tienda.clearConsole();
             carro.mostrar();
             tienda.mostrar();
-            opcion = JOptionPane.showInputDialog("1.Añadir productos al catálogo de tienda."//Añadir artículos a la tienda, ArrayList y al fichero
+            opcion = JOptionPane.showInputDialog("1.Añadir productos a la tienda"//Añadir artículos a la tienda, ArrayList y al fichero
                     //Mostramos el catálogo de la tienda, desde el ArrayList importando los datos del fichero catalogo
-                    + "\n2.Agregar o Quitar unidades de productos a la tienda."
+                    + "\n2.Quitar o agregar unidades a la tienda."
                     //Guardamos los productos seleccionados, preguntando el nombre y número de unidades(restaremos este número de unidades 
                     //al ArrayList de catálogo y si llega a 0 eliminamos el producto) en un ArrayList carrito, 
                     //y mostramos lo que hay en el carrito y e precio total.
@@ -32,7 +32,7 @@ public class App {
                     //Restamos el número de unidades determinado al ArrayList de Productos, actualizamos fichero catalogo
                     + "\n4.Eliminar producto del carrito."
                     //
-                    + "\n5.Agregar o quitar productos al carrito"
+                    + "\n5.Quitar o agregar unidades al carrito."
                     /*Guardamos los productos del carrito en un fichero, 
                     * mostramos productos, precio total
                     * Actualizamos el fichero de la tienda 
@@ -48,7 +48,7 @@ public class App {
                 case "2":
                     //tienda.lerObxectos();
                     String[] option = {"Quitar", "Agregar"};
-                    int op1 = JOptionPane.showOptionDialog(null, "Seleccione una opcion:", "Agregar o quitar unidades.", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option, option[0]);
+                    int op1 = JOptionPane.showOptionDialog(null, "Seleccione una opcion:", "Quitar o agregar unidades.", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option, option[0]);
                     switch (op1) {
                         case 0:
                             tienda.quitarUnidades();
@@ -77,7 +77,7 @@ public class App {
                     break;
                 case "5":
                     String[] option2 = {"Quitar", "Agregar"};
-                    int op2 = JOptionPane.showOptionDialog(null, "Seleccione una opcion:", "Agregar o quitar unidades.", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option2, option2[0]);
+                    int op2 = JOptionPane.showOptionDialog(null, "Seleccione una opcion:", "Quitar o agregar unidades.", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option2, option2[0]);
                     switch (op2) {
                         case 0:
                             carro.quitarUnidades();

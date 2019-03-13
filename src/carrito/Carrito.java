@@ -52,7 +52,7 @@ public class Carrito  implements MetodosComunes{
         try {
             String nome = IO.introducirString(IO.VENTANA, "¿Qué producto desea añadir?");
             excepcionIgualdadNombreProducto(nome);
-            int numUnid = IO.introducirInt(IO.VENTANA, "Número de unidades.");
+            int numUnid = IO.introducirInt(IO.VENTANA, "Número de unidades:");
             excepcionAñadirNumUnidades(nome, numUnid);
             for (Productos p : Tienda.catalogo) {
                 if (p.getNome().equals(nome)) {
@@ -70,7 +70,7 @@ public class Carrito  implements MetodosComunes{
         } catch (Excepcion_Definida ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Introduce un número.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Introduzca un número.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -103,8 +103,8 @@ public class Carrito  implements MetodosComunes{
     @Override
     public void engadirUnidades() {
         try {
-            String nome = IO.introducirString(IO.VENTANA, "Nombre del producto.");
-            int numUnid = IO.introducirInt(IO.VENTANA, "Número de unidades.");
+            String nome = IO.introducirString(IO.VENTANA, "Nombre del producto:");
+            int numUnid = IO.introducirInt(IO.VENTANA, "Número de unidades:");
             excepcionAñadirNumUnidades(nome, numUnid);
             for (Productos productos : carrito) {
                 if (productos.getNome().equals(nome)) {
@@ -122,7 +122,7 @@ public class Carrito  implements MetodosComunes{
         } catch (Excepcion_Definida ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Introduce un número.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Introduzca un número.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 //Calcular precio actual de los productos del carrito
@@ -143,8 +143,8 @@ public class Carrito  implements MetodosComunes{
     @Override
     public void quitarUnidades() {
         try {
-            String nome = IO.introducirString(IO.VENTANA, "Nombre del producto.");
-            int numUnid = IO.introducirInt(IO.VENTANA, "Número de unidades.");
+            String nome = IO.introducirString(IO.VENTANA, "Nombre del producto:");
+            int numUnid = IO.introducirInt(IO.VENTANA, "Número de unidades:");
             excepcionQuitarNumUnidades(nome, numUnid);
             for (Productos product : carrito) {
                 if (product.getNome().equals(nome)) {

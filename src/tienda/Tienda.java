@@ -64,7 +64,7 @@ public class Tienda  implements MetodosComunes {
             String tipo = selectTipo();
             excepcionPrecioNegativo(precio);
 
-            int numUnid = IO.introducirInt(IO.VENTANA, "Número de unidades.");
+            int numUnid = IO.introducirInt(IO.VENTANA, "Número de unidades:");
             excepcionNumUnidadesNegativo(numUnid);
             Productos p = new Productos(nome, precio, tipo, numUnid);
             catalogo.add(p);
@@ -72,14 +72,14 @@ public class Tienda  implements MetodosComunes {
         } catch (Excepcion_Definida ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (NumberFormatException ex) { //Para que cuando metamos un String en cantidad o precio no rompa el programa.
-            JOptionPane.showMessageDialog(null, "Introduce un número.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Introduzca un número.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     //Elimina el producto de nuestro Array y del fichero
     @Override
     public void eliminarProducto() {
-        String nome = JOptionPane.showInputDialog("Introduzca nome de producto:");
+        String nome = JOptionPane.showInputDialog("Introduzca nombre de producto:");
         for (Productos p : catalogo) {
             if (p.getNome() == nome) {
                 catalogo.remove(p);
@@ -93,8 +93,8 @@ public class Tienda  implements MetodosComunes {
 
         try {
 
-            String nome = IO.introducirString(IO.VENTANA, "Nome do producto:");
-            int numUnid = IO.introducirInt(IO.VENTANA, "Número de unidades.");
+            String nome = IO.introducirString(IO.VENTANA, "Nombre del producto:");
+            int numUnid = IO.introducirInt(IO.VENTANA, "Número de unidades:");
             excepcionNumUnidadesNegativo(numUnid);
             for (Productos productos : catalogo) {
                 if (productos.getNome().equals(nome)) {
@@ -105,7 +105,7 @@ public class Tienda  implements MetodosComunes {
         } catch (Excepcion_Definida ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (NumberFormatException ex) { //Para que cuando metamos un String en cantidad o precio no rompa el programa.
-            JOptionPane.showMessageDialog(null, "Introduce un número.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Introduzca un número.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -113,8 +113,8 @@ public class Tienda  implements MetodosComunes {
     @Override
     public void quitarUnidades() {
         try {
-            String nome = IO.introducirString(IO.VENTANA, "Nome do producto:");
-            int numUnid = IO.introducirInt(IO.VENTANA, "Número de unidades.");
+            String nome = IO.introducirString(IO.VENTANA, "Nombre do producto:");
+            int numUnid = IO.introducirInt(IO.VENTANA, "Número de unidades:");
             excepcionNumUnidadesNegativo(numUnid);
             Iterator it = catalogo.iterator();
             Productos product = new Productos();
@@ -132,7 +132,7 @@ public class Tienda  implements MetodosComunes {
         } catch (Excepcion_Definida ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (NumberFormatException ex) { //Para que cuando metamos un String en cantidad o precio no rompa el programa.
-            JOptionPane.showMessageDialog(null, "Introduce un número.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Introduzca un número.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -153,8 +153,8 @@ public class Tienda  implements MetodosComunes {
 
     public String selectTipo() {
         String opcion = "";
-        String[] Tipo = {"Ropa", "Alimento", "Electronica", "Higiene", "Deporte", "Informática"};
-        int opt = JOptionPane.showOptionDialog(null, "Seleccione una opcion:", "Seleccionar Tipo", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, Tipo, Tipo[0]);
+        String[] Tipo = {"Ropa", "Alimento", "Electronica", "Higiene", "Deporte", "Informatica"};
+        int opt = JOptionPane.showOptionDialog(null, "Seleccione una opción:", "Seleccionar tipo", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, Tipo, Tipo[0]);
         switch (opt) {
             case 0:
                 opcion = "Ropa";
@@ -214,7 +214,7 @@ public class Tienda  implements MetodosComunes {
 
         {
             if (precio < 0) {
-                throw new Excepcion_Definida("El número precio no puede ser negativo");
+                throw new Excepcion_Definida("El precio no puede ser negativo");
             }
         }
 
